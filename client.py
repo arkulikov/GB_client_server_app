@@ -31,7 +31,7 @@ def process_answer(message):
     if RESPONSE in message:
         if message[RESPONSE] == 200:
             return '200: OK'
-        return f'400 : {message[ERROR]}'
+        return '400: Bad Request'
     raise ValueError
 
 
@@ -41,8 +41,8 @@ def main():
     client.py 192.168.0.100 8079
     """
     try:
-        server_address = sys.argv[1]
-        server_port = sys.argv[2]
+        server_address = sys.argv[2]
+        server_port = int(sys.argv[3])
         if server_port < 1024 or server_port > 65535:
             raise ValueError
     except IndexError:
