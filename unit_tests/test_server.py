@@ -7,7 +7,7 @@ from common.variables import *
 
 class TestServer(unittest.TestCase):
     """
-    Класс для тестирования сервера (server.py)
+    Класс для тестирования сервера
     """
     error_dict = {RESPONSE: 400, ERROR: 'Bad Request'}
     ok_dict = {RESPONSE: 200, ALERT: 'OK'}
